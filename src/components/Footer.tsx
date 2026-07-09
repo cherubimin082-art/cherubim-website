@@ -37,7 +37,7 @@ export default function Footer() {
             {[
               { label: 'Instagram', href: 'https://www.instagram.com/cherubim_in555/?hl=en', icon: 'ti ti-brand-instagram' },
               { label: 'Facebook', href: 'https://www.facebook.com/profile.php?id=61583900161151', icon: 'ti ti-brand-facebook' },
-              { label: 'YouTube', href: 'https://www.youtube.com/', icon: 'ti ti-brand-youtube' },
+              { label: 'YouTube', href: 'https://www.youtube.com/@cherubim_ai_infosoft', icon: 'ti ti-brand-youtube' },
               { label: 'WhatsApp', href: 'https://wa.me/917869729829', icon: 'ti ti-brand-whatsapp' },
             ].map(s => (
               <a key={s.label} href={s.href} aria-label={s.label} className="footer-social"
