@@ -1,4 +1,5 @@
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
+import { useState } from 'react';
 import type { ReactNode } from 'react';
 
 // ---- Sales & Marketing Trainee ----
@@ -292,7 +293,44 @@ function RoleParagraph({ children }: { children: ReactNode }) {
   return <p style={{ fontSize: '0.9rem', color: '#4b5563', margin: '0 0 0.75rem', lineHeight: 1.6 }}>{children}</p>;
 }
 
+function RoleCard({
+  title, blurb, tags, tagColor, tagBg, open, onClick,
+}: {
+  title: string; blurb: string; tags: string[]; tagColor: string; tagBg: string; open: boolean; onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      style={{
+        textAlign: 'left',
+        width: '100%',
+        background: 'white',
+        border: open ? `2px solid ${tagColor}` : '1px solid #e0e0e0',
+        borderRadius: '16px',
+        padding: '1.5rem',
+        cursor: 'pointer',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '0.75rem',
+        font: 'inherit',
+      }}>
+      <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.15rem', fontWeight: 700, color: '#0A0A0A', margin: 0 }}>
+        {title}
+      </h3>
+      <TagRow color={tagColor} bg={tagBg} items={tags} />
+      <p style={{ fontSize: '0.88rem', color: '#4b5563', lineHeight: 1.6, margin: 0, flex: 1 }}>{blurb}</p>
+      <span style={{ fontSize: '0.85rem', fontWeight: 700, color: tagColor }}>
+        {open ? 'Hide details −' : 'View full details →'}
+      </span>
+    </button>
+  );
+}
+
 export default function Careers() {
+  const [openRole, setOpenRole] = useState<'sales' | 'ai' | null>(null);
+  const toggle = (role: 'sales' | 'ai') => setOpenRole(prev => (prev === role ? null : role));
+
   return (
     <>
       {/* Hero */}
@@ -325,16 +363,36 @@ export default function Careers() {
             Open Positions
           </h2>
 
-          {/* ===== Role 1: Sales & Marketing Trainee ===== */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-            style={{ background: 'white', border: '1px solid #e0e0e0', borderRadius: '16px', padding: '1.75rem', marginBottom: '1.5rem' }}>
-            <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.3rem', fontWeight: 700, color: '#0A0A0A', margin: '0 0 0.75rem' }}>
-              Sales & Marketing Trainee
-            </h3>
-            <TagRow color="#E8187A" bg="#FBEAF0" items={['Chennai (On-site)', 'Trainee → Full-Time', '3-Month Trainee Period', 'Freshers / 0–1 Year', '₹7,000/month stipend']} />
-          </motion.div>
+          {/* Role summary cards */}
+          <div className="about-values-grid" style={{ marginBottom: '1.5rem' }}>
+            <RoleCard
+              title="Sales & Marketing Trainee"
+              blurb="Generate leads, run outreach and learn the full sales & marketing cycle — with AI tools built in."
+              tags={['Chennai (On-site)', '3-Month Trainee', '₹7,000/month']}
+              tagColor="#E8187A"
+              tagBg="#FBEAF0"
+              open={openRole === 'sales'}
+              onClick={() => toggle('sales')}
+            />
+            <RoleCard
+              title="AI Software Trainee"
+              blurb="Work on real AI, Agentic systems and product engineering — not just training exercises."
+              tags={['Kelambakkam, Chennai', '3-Month Trainee', '₹7,000/month']}
+              tagColor="#185FA5"
+              tagBg="#E6F1FB"
+              open={openRole === 'ai'}
+              onClick={() => toggle('ai')}
+            />
+          </div>
 
+          <AnimatePresence initial={false}>
+          {openRole === 'sales' && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            style={{ overflow: 'hidden' }}>
           <p style={{ fontSize: '0.98rem', lineHeight: 1.75, color: '#374151' }}>
             As a Sales & Marketing Trainee, you will work closely with the founders and business team to generate leads, engage prospects, understand customer requirements, conduct product demonstrations and convert opportunities into customers.
           </p>
@@ -417,17 +475,18 @@ export default function Careers() {
               Apply — Sales & Marketing Trainee →
             </a>
           </div>
-
-          {/* ===== Role 2: AI Software Trainee ===== */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
-            style={{ background: 'white', border: '1px solid #e0e0e0', borderRadius: '16px', padding: '1.75rem', marginTop: '3.5rem', marginBottom: '1.5rem' }}>
-            <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.3rem', fontWeight: 700, color: '#0A0A0A', margin: '0 0 0.75rem' }}>
-              AI Software Trainee
-            </h3>
-            <TagRow color="#185FA5" bg="#E6F1FB" items={['Kelambakkam, Chennai', 'Trainee → Full-Time', '3-Month Trainee Period', 'Freshers / 0–1 Year', '₹7,000/month stipend']} />
           </motion.div>
+          )}
+          </AnimatePresence>
 
+          <AnimatePresence initial={false}>
+          {openRole === 'ai' && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            style={{ overflow: 'hidden' }}>
           <p style={{ fontSize: '0.98rem', lineHeight: 1.75, color: '#374151' }}>
             As an AI Software Trainee, you will work directly with our development team on real-world software, AI and automation projects — not just training exercises. You'll get exposure to Agentic AI, multi-agent systems, LLMs and AI APIs, AI-powered business automation, backend and frontend development, workflow automation, database-driven applications, cloud infrastructure, AI-enabled SaaS platforms and mobile/web applications.
           </p>
@@ -513,6 +572,9 @@ export default function Careers() {
               Apply — AI Software Trainee →
             </a>
           </div>
+          </motion.div>
+          )}
+          </AnimatePresence>
         </div>
       </section>
 
