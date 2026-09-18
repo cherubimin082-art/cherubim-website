@@ -364,6 +364,7 @@ export default function Careers() {
           </h2>
 
           {/* Role summary cards */}
+          {openRole === null && (
           <div className="about-values-grid" style={{ marginBottom: '1.5rem' }}>
             <RoleCard
               title="Sales & Marketing Trainee"
@@ -371,7 +372,7 @@ export default function Careers() {
               tags={['Chennai (On-site)', '3-Month Trainee', '₹7,000/month']}
               tagColor="#E8187A"
               tagBg="#FBEAF0"
-              open={openRole === 'sales'}
+              open={false}
               onClick={() => toggle('sales')}
             />
             <RoleCard
@@ -380,19 +381,24 @@ export default function Careers() {
               tags={['Kelambakkam, Chennai', '3-Month Trainee', '₹7,000/month']}
               tagColor="#185FA5"
               tagBg="#E6F1FB"
-              open={openRole === 'ai'}
+              open={false}
               onClick={() => toggle('ai')}
             />
           </div>
+          )}
 
-          <AnimatePresence initial={false}>
+          <AnimatePresence mode="wait" initial={false}>
           {openRole === 'sales' && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            style={{ overflow: 'hidden' }}>
+            key="sales"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.25 }}>
+          <button type="button" onClick={() => setOpenRole(null)}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', fontWeight: 700, fontSize: '0.9rem', color: '#E8187A', padding: 0, marginBottom: '1.5rem' }}>
+            ← Back to all roles
+          </button>
           <p style={{ fontSize: '0.98rem', lineHeight: 1.75, color: '#374151' }}>
             As a Sales & Marketing Trainee, you will work closely with the founders and business team to generate leads, engage prospects, understand customer requirements, conduct product demonstrations and convert opportunities into customers.
           </p>
@@ -475,18 +481,26 @@ export default function Careers() {
               Apply — Sales & Marketing Trainee →
             </a>
           </div>
+          <button type="button" onClick={() => setOpenRole(null)}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', fontWeight: 700, fontSize: '0.9rem', color: '#E8187A', padding: 0, marginTop: '1.5rem' }}>
+            ← Back to all roles
+          </button>
           </motion.div>
           )}
           </AnimatePresence>
 
-          <AnimatePresence initial={false}>
+          <AnimatePresence mode="wait" initial={false}>
           {openRole === 'ai' && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            style={{ overflow: 'hidden' }}>
+            key="ai"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.25 }}>
+          <button type="button" onClick={() => setOpenRole(null)}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', fontWeight: 700, fontSize: '0.9rem', color: '#185FA5', padding: 0, marginBottom: '1.5rem' }}>
+            ← Back to all roles
+          </button>
           <p style={{ fontSize: '0.98rem', lineHeight: 1.75, color: '#374151' }}>
             As an AI Software Trainee, you will work directly with our development team on real-world software, AI and automation projects — not just training exercises. You'll get exposure to Agentic AI, multi-agent systems, LLMs and AI APIs, AI-powered business automation, backend and frontend development, workflow automation, database-driven applications, cloud infrastructure, AI-enabled SaaS platforms and mobile/web applications.
           </p>
@@ -572,6 +586,10 @@ export default function Careers() {
               Apply — AI Software Trainee →
             </a>
           </div>
+          <button type="button" onClick={() => setOpenRole(null)}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', fontWeight: 700, fontSize: '0.9rem', color: '#185FA5', padding: 0, marginTop: '1.5rem' }}>
+            ← Back to all roles
+          </button>
           </motion.div>
           )}
           </AnimatePresence>
