@@ -5,6 +5,7 @@ const companyLinks = [
   { label: 'About Us', to: '/about' },
   { label: 'Our Work', to: '/work' },
   { label: 'Services', to: '/services' },
+  { label: 'Careers', to: '/careers' },
   { label: 'Contact', to: '/contact' },
 ];
 

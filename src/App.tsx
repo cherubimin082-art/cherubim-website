@@ -7,6 +7,7 @@ import About from './pages/About';
 import Work from './pages/Work';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
+import Careers from './pages/Careers';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import './index.css';
 
@@ -23,6 +24,7 @@ export default function App() {
             <Route path="/work" element={<Work />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/careers" element={<Careers />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>
         </main>
