@@ -106,12 +106,10 @@ export default function Footer() {
           © {new Date().getFullYear()} Cherubim AI Infosoft Pvt Ltd · All rights reserved
         </p>
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          {['Privacy Policy', 'Terms of Service'].map(l => (
-            <a key={l} href="#" className="footer-link"
-              style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', cursor: 'pointer', opacity: 0.75, transition: 'opacity 0.2s' }}>
-              {l}
-            </a>
-          ))}
+          <Link to="/privacy-policy" className="footer-link"
+            style={{ color: 'rgba(255,255,255,0.5)', textDecoration: 'none', cursor: 'pointer', opacity: 0.75, transition: 'opacity 0.2s' }}>
+            Privacy Policy
+          </Link>
         </div>
       </div>
     </footer>
