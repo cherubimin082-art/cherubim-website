@@ -16,7 +16,7 @@ export default function App() {
     <BrowserRouter>
       <div className="min-h-screen" style={{ background: '#F7F8FF' }}>
         <Navbar />
-        <main>
+        <main style={{ paddingTop: '72px' }}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />

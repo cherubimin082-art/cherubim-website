@@ -20,8 +20,9 @@ export default function Navbar() {
         className="navbar-header"
         style={{
           width: '100%',
-          position: 'sticky',
+          position: 'fixed',
           top: 0,
+          left: 0,
           zIndex: 1000,
           background: '#0d0d0d',
           padding: '0 2rem',
