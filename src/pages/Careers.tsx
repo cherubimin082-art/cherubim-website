@@ -369,7 +369,7 @@ export default function Careers() {
             <RoleCard
               title="Sales & Marketing Trainee"
               blurb="Generate leads, run outreach and learn the full sales & marketing cycle — with AI tools built in."
-              tags={['Chennai (On-site)', '3-Month Trainee', '₹7,000/month']}
+              tags={['Kelambakkam, Chennai', '3-Month Trainee', '₹7,000/month']}
               tagColor="#E8187A"
               tagBg="#FBEAF0"
               open={false}
@@ -402,7 +402,7 @@ export default function Careers() {
           <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.6rem', fontWeight: 800, color: '#0A0A0A', margin: '0 0 0.9rem' }}>
             Sales & Marketing Trainee
           </h3>
-          <TagRow color="#E8187A" bg="#FBEAF0" items={['Chennai (On-site)', '3-Month Trainee', '₹7,000/month']} />
+          <TagRow color="#E8187A" bg="#FBEAF0" items={['Kelambakkam, Chennai', '3-Month Trainee', '₹7,000/month']} />
           <p style={{ fontSize: '0.98rem', lineHeight: 1.75, color: '#374151' }}>
             As a Sales & Marketing Trainee, you will work closely with the founders and business team to generate leads, engage prospects, understand customer requirements, conduct product demonstrations and convert opportunities into customers.
           </p>
