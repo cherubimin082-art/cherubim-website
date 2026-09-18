@@ -369,7 +369,7 @@ export default function Careers() {
             <RoleCard
               title="Sales & Marketing Trainee"
               blurb="Generate leads, run outreach and learn the full sales & marketing cycle — with AI tools built in."
-              tags={['Kelambakkam, Chennai', '3-Month Trainee', '₹7,000/month']}
+              tags={['Kelambakkam, Chennai', '3-Month Trainee']}
               tagColor="#E8187A"
               tagBg="#FBEAF0"
               open={false}
@@ -378,7 +378,7 @@ export default function Careers() {
             <RoleCard
               title="AI Software Trainee"
               blurb="Work on real AI, Agentic systems and product engineering — not just training exercises."
-              tags={['Kelambakkam, Chennai', '3-Month Trainee', '₹7,000/month']}
+              tags={['Kelambakkam, Chennai', '3-Month Trainee']}
               tagColor="#185FA5"
               tagBg="#E6F1FB"
               open={false}
@@ -402,7 +402,7 @@ export default function Careers() {
           <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.6rem', fontWeight: 800, color: '#0A0A0A', margin: '0 0 0.9rem' }}>
             Sales & Marketing Trainee
           </h3>
-          <TagRow color="#E8187A" bg="#FBEAF0" items={['Kelambakkam, Chennai', '3-Month Trainee', '₹7,000/month']} />
+          <TagRow color="#E8187A" bg="#FBEAF0" items={['Kelambakkam, Chennai', '3-Month Trainee']} />
           <p style={{ fontSize: '0.98rem', lineHeight: 1.75, color: '#374151' }}>
             As a Sales & Marketing Trainee, you will work closely with the founders and business team to generate leads, engage prospects, understand customer requirements, conduct product demonstrations and convert opportunities into customers.
           </p>
@@ -471,18 +471,13 @@ export default function Careers() {
             Freshers are welcome. Candidates from non-business backgrounds who have strong communication and sales skills are also encouraged to apply.
           </p>
 
-          <RoleHeading>Compensation</RoleHeading>
-          <p style={{ fontSize: '0.9rem', color: '#4b5563', lineHeight: 1.6 }}>
-            Trainee period: <strong>₹7,000 per month</strong>. After 3 months: full-time employment and compensation based on performance, role and experience. Performance incentives are also offered.
-          </p>
-
           <div style={{ background: '#111', borderRadius: '12px', padding: '1.5rem', marginTop: '2rem', textAlign: 'center' }}>
-            <p style={{ color: '#d1d5db', fontSize: '0.9rem', margin: '0 0 0.9rem', lineHeight: 1.6 }}>
-              Send your resume, LinkedIn profile, and details of any sales/marketing experience.
+            <p style={{ color: '#d1d5db', fontSize: '0.9rem', margin: '0 0 0.6rem', lineHeight: 1.6 }}>
+              Send your resume, LinkedIn profile, and details of any sales/marketing experience to:
             </p>
             <a href="mailto:support@cherubim.in?subject=Application%20%E2%80%94%20Sales%20%26%20Marketing%20Trainee"
-              style={{ display: 'inline-block', background: '#E8187A', color: 'white', borderRadius: '999px', padding: '0.7rem 1.75rem', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none' }}>
-              Apply — Sales & Marketing Trainee →
+              style={{ color: '#E8187A', fontWeight: 700, fontSize: '0.95rem', textDecoration: 'underline' }}>
+              Email: support@cherubim.in
             </a>
           </div>
           <button type="button" onClick={() => setOpenRole(null)}
@@ -508,7 +503,7 @@ export default function Careers() {
           <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.6rem', fontWeight: 800, color: '#0A0A0A', margin: '0 0 0.9rem' }}>
             AI Software Trainee
           </h3>
-          <TagRow color="#185FA5" bg="#E6F1FB" items={['Kelambakkam, Chennai', '3-Month Trainee', '₹7,000/month']} />
+          <TagRow color="#185FA5" bg="#E6F1FB" items={['Kelambakkam, Chennai', '3-Month Trainee']} />
           <p style={{ fontSize: '0.98rem', lineHeight: 1.75, color: '#374151' }}>
             As an AI Software Trainee, you will work directly with our development team on real-world software, AI and automation projects — not just training exercises. You'll get exposure to Agentic AI, multi-agent systems, LLMs and AI APIs, AI-powered business automation, backend and frontend development, workflow automation, database-driven applications, cloud infrastructure, AI-enabled SaaS platforms and mobile/web applications.
           </p>
@@ -580,18 +575,13 @@ export default function Careers() {
             Equivalent practical skills and project experience may also be considered.
           </p>
 
-          <RoleHeading>Compensation</RoleHeading>
-          <p style={{ fontSize: '0.9rem', color: '#4b5563', lineHeight: 1.6 }}>
-            Trainee period: <strong>₹7,000 per month</strong>. After 3 months: full-time employment and compensation based on performance, role and experience.
-          </p>
-
           <div style={{ background: '#111', borderRadius: '12px', padding: '1.5rem', marginTop: '2rem', textAlign: 'center' }}>
-            <p style={{ color: '#d1d5db', fontSize: '0.9rem', margin: '0 0 0.9rem', lineHeight: 1.6 }}>
-              Send your resume, GitHub profile, LinkedIn profile, and details of 1–2 projects you've built.
+            <p style={{ color: '#d1d5db', fontSize: '0.9rem', margin: '0 0 0.6rem', lineHeight: 1.6 }}>
+              Send your resume, GitHub profile, LinkedIn profile, and details of 1–2 projects you've built to:
             </p>
             <a href="mailto:support@cherubim.in?subject=Application%20%E2%80%94%20AI%20Software%20Trainee"
-              style={{ display: 'inline-block', background: '#185FA5', color: 'white', borderRadius: '999px', padding: '0.7rem 1.75rem', fontWeight: 700, fontSize: '0.9rem', textDecoration: 'none' }}>
-              Apply — AI Software Trainee →
+              style={{ color: '#185FA5', fontWeight: 700, fontSize: '0.95rem', textDecoration: 'underline' }}>
+              Email: support@cherubim.in
             </a>
           </div>
           <button type="button" onClick={() => setOpenRole(null)}
