@@ -399,6 +399,10 @@ export default function Careers() {
             style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', fontWeight: 700, fontSize: '0.9rem', color: '#E8187A', padding: 0, marginBottom: '1.5rem' }}>
             ← Back to all roles
           </button>
+          <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.6rem', fontWeight: 800, color: '#0A0A0A', margin: '0 0 0.9rem' }}>
+            Sales & Marketing Trainee
+          </h3>
+          <TagRow color="#E8187A" bg="#FBEAF0" items={['Chennai (On-site)', '3-Month Trainee', '₹7,000/month']} />
           <p style={{ fontSize: '0.98rem', lineHeight: 1.75, color: '#374151' }}>
             As a Sales & Marketing Trainee, you will work closely with the founders and business team to generate leads, engage prospects, understand customer requirements, conduct product demonstrations and convert opportunities into customers.
           </p>
@@ -501,6 +505,10 @@ export default function Careers() {
             style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', fontWeight: 700, fontSize: '0.9rem', color: '#185FA5', padding: 0, marginBottom: '1.5rem' }}>
             ← Back to all roles
           </button>
+          <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.6rem', fontWeight: 800, color: '#0A0A0A', margin: '0 0 0.9rem' }}>
+            AI Software Trainee
+          </h3>
+          <TagRow color="#185FA5" bg="#E6F1FB" items={['Kelambakkam, Chennai', '3-Month Trainee', '₹7,000/month']} />
           <p style={{ fontSize: '0.98rem', lineHeight: 1.75, color: '#374151' }}>
             As an AI Software Trainee, you will work directly with our development team on real-world software, AI and automation projects — not just training exercises. You'll get exposure to Agentic AI, multi-agent systems, LLMs and AI APIs, AI-powered business automation, backend and frontend development, workflow automation, database-driven applications, cloud infrastructure, AI-enabled SaaS platforms and mobile/web applications.
           </p>
