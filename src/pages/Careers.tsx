@@ -248,6 +248,41 @@ const aiEducation = [
   'Artificial Intelligence / Machine Learning', 'Software Engineering',
 ];
 
+// ---- Telecalling & Relationship Executive ----
+
+const telecallingResponsibilities = [
+  'Contact potential astrologers through phone calls.',
+  'Introduce and explain the Guruji Support App, its features, and benefits.',
+  'Assist astrologers throughout the onboarding process.',
+  'Follow up with interested astrologers and help them complete the required steps.',
+  'Maintain regular communication with onboarded astrologers.',
+  'Understand and respond to basic astrologer queries.',
+  'Build positive and long-term relationships with astrologers.',
+  'Ensure regular engagement and provide ongoing support.',
+  'Maintain daily calling and follow-up records.',
+];
+
+const telecallingRequirements = [
+  'Any Degree.',
+  'Female candidates only.',
+  'Freshers are welcome to apply.',
+  'Candidates returning to work after a career break are encouraged to apply.',
+  'Good verbal communication skills.',
+  'Ability to communicate in Tamil, English, Hindi, or Telugu.',
+  'Good internet connection and a suitable work-from-home setup.',
+  'Comfortable making regular phone calls and following up with leads.',
+  'Positive attitude and willingness to learn.',
+];
+
+const telecallingOffer = [
+  'Work From Anywhere in India.',
+  '₹12,000 fixed monthly salary.',
+  'Performance-based bonus.',
+  'Health insurance coverage.',
+  'Training and guidance.',
+  'Opportunity for career growth.',
+];
+
 function SectionLabel({ children }: { children: ReactNode }) {
   return (
     <span style={{ fontSize: '0.75rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#ff007a', fontWeight: 600, display: 'block', marginBottom: '0.5rem' }}>
@@ -339,8 +374,8 @@ function RoleCard({
 }
 
 export default function Careers() {
-  const [openRole, setOpenRole] = useState<'sales' | 'ai' | null>(null);
-  const toggle = (role: 'sales' | 'ai') => setOpenRole(prev => (prev === role ? null : role));
+  const [openRole, setOpenRole] = useState<'sales' | 'ai' | 'telecalling' | null>(null);
+  const toggle = (role: 'sales' | 'ai' | 'telecalling') => setOpenRole(prev => (prev === role ? null : role));
 
   return (
     <>
@@ -395,6 +430,15 @@ export default function Careers() {
               open={false}
               closed
               onClick={() => toggle('ai')}
+            />
+            <RoleCard
+              title="Telecalling & Relationship Executive"
+              blurb="Connect with astrologers over the phone, guide their onboarding, and build lasting relationships."
+              tags={['Work From Home', 'Anywhere in India', '₹12,000/month + Bonus']}
+              tagColor="#0F6E56"
+              tagBg="#E1F5EE"
+              open={false}
+              onClick={() => toggle('telecalling')}
             />
           </div>
           )}
@@ -597,6 +641,69 @@ export default function Careers() {
           </div>
           <button type="button" onClick={() => setOpenRole(null)}
             style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', fontWeight: 700, fontSize: '0.9rem', color: '#185FA5', padding: 0, marginTop: '1.5rem' }}>
+            ← Back to all roles
+          </button>
+          </motion.div>
+          )}
+          </AnimatePresence>
+
+          <AnimatePresence mode="wait" initial={false}>
+          {openRole === 'telecalling' && (
+          <motion.div
+            key="telecalling"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.25 }}>
+          <button type="button" onClick={() => setOpenRole(null)}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', fontWeight: 700, fontSize: '0.9rem', color: '#0F6E56', padding: 0, marginBottom: '1.5rem' }}>
+            ← Back to all roles
+          </button>
+          <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.6rem', fontWeight: 800, color: '#0A0A0A', margin: '0 0 0.9rem' }}>
+            Telecalling & Relationship Executive
+          </h3>
+          <TagRow color="#0F6E56" bg="#E1F5EE" items={['Full-Time', 'Work From Home', 'Anywhere in India', '₹12,000/month + Bonus']} />
+
+          <p style={{ fontSize: '0.98rem', lineHeight: 1.75, color: '#374151' }}>
+            We are looking for a confident and friendly Telecalling & Relationship Executive to join the Guruji Support App team.
+          </p>
+          <p style={{ fontSize: '0.98rem', lineHeight: 1.75, color: '#374151' }}>
+            The role involves connecting with astrologers, introducing them to the Guruji Support App, assisting them with the onboarding process, and maintaining strong relationships with them after they join the platform.
+          </p>
+
+          <RoleHeading>Key Responsibilities</RoleHeading>
+          <CheckList items={telecallingResponsibilities} />
+
+          <RoleHeading>Requirements</RoleHeading>
+          <CheckList items={telecallingRequirements} />
+
+          <RoleHeading>What We Offer</RoleHeading>
+          <CheckList items={telecallingOffer} />
+
+          <RoleHeading>Ideal Candidate</RoleHeading>
+          <RoleParagraph>
+            The ideal candidate should be comfortable speaking with people over the phone, have good communication skills, and be able to build professional relationships with astrologers.
+          </RoleParagraph>
+          <p style={{ fontSize: '0.9rem', color: '#4b5563', lineHeight: 1.6 }}>
+            Freshers and women returning to work after a career break are encouraged to apply.
+          </p>
+
+          <RoleHeading>Join Us</RoleHeading>
+          <p style={{ fontSize: '0.9rem', color: '#4b5563', lineHeight: 1.6 }}>
+            Join the Guruji Support App team and build your career while helping astrologers grow their online presence.
+          </p>
+
+          <div style={{ background: '#111', borderRadius: '12px', padding: '1.5rem', marginTop: '2rem', textAlign: 'center' }}>
+            <p style={{ color: '#d1d5db', fontSize: '0.9rem', margin: '0 0 0.6rem', lineHeight: 1.6 }}>
+              Send your resume and details to:
+            </p>
+            <a href="mailto:support@cherubim.in?subject=Application%20%E2%80%94%20Telecalling%20%26%20Relationship%20Executive"
+              style={{ color: '#0F6E56', fontWeight: 700, fontSize: '0.95rem', textDecoration: 'underline' }}>
+              Email: support@cherubim.in
+            </a>
+          </div>
+          <button type="button" onClick={() => setOpenRole(null)}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', fontWeight: 700, fontSize: '0.9rem', color: '#0F6E56', padding: 0, marginTop: '1.5rem' }}>
             ← Back to all roles
           </button>
           </motion.div>
