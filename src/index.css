@@ -346,6 +346,19 @@ input:focus, textarea:focus { outline: none; }
 @media (max-width: 600px) {
   .about-values-grid { grid-template-columns: 1fr; }
 }
+
+/* Careers: job cards grid */
+.careers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+@media (max-width: 900px) {
+  .careers-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .careers-grid { grid-template-columns: 1fr; }
+}
 .about-value-card { transition: transform 0.2s, box-shadow 0.2s; background: white; }
 .about-value-card:hover {
   transform: translateY(-3px);

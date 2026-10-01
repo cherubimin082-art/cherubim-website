@@ -411,7 +411,7 @@ export default function Careers() {
 
           {/* Role summary cards */}
           {openRole === null && (
-          <div className="about-values-grid" style={{ marginBottom: '1.5rem' }}>
+          <div className="careers-grid" style={{ marginBottom: '1.5rem' }}>
             <RoleCard
               title="Sales & Marketing Trainee"
               blurb="Generate leads, run outreach and learn the full sales & marketing cycle — with AI tools built in."
