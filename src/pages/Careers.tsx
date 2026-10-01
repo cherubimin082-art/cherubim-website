@@ -293,10 +293,18 @@ function RoleParagraph({ children }: { children: ReactNode }) {
   return <p style={{ fontSize: '0.9rem', color: '#4b5563', margin: '0 0 0.75rem', lineHeight: 1.6 }}>{children}</p>;
 }
 
+function ClosedBadge() {
+  return (
+    <span style={{ fontSize: '0.68rem', fontWeight: 700, color: '#991B1B', background: '#FEE2E2', border: '1px solid #991B1B', borderRadius: '4px', padding: '2px 8px', whiteSpace: 'nowrap' }}>
+      Closed
+    </span>
+  );
+}
+
 function RoleCard({
-  title, blurb, tags, tagColor, tagBg, open, onClick,
+  title, blurb, tags, tagColor, tagBg, open, onClick, closed,
 }: {
-  title: string; blurb: string; tags: string[]; tagColor: string; tagBg: string; open: boolean; onClick: () => void;
+  title: string; blurb: string; tags: string[]; tagColor: string; tagBg: string; open: boolean; onClick: () => void; closed?: boolean;
 }) {
   return (
     <button
@@ -315,9 +323,12 @@ function RoleCard({
         gap: '0.75rem',
         font: 'inherit',
       }}>
-      <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.15rem', fontWeight: 700, color: '#0A0A0A', margin: 0 }}>
-        {title}
-      </h3>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+        <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.15rem', fontWeight: 700, color: '#0A0A0A', margin: 0 }}>
+          {title}
+        </h3>
+        {closed && <ClosedBadge />}
+      </div>
       <TagRow color={tagColor} bg={tagBg} items={tags} />
       <p style={{ fontSize: '0.88rem', color: '#4b5563', lineHeight: 1.6, margin: 0, flex: 1 }}>{blurb}</p>
       <span style={{ fontSize: '0.85rem', fontWeight: 700, color: tagColor }}>
@@ -382,6 +393,7 @@ export default function Careers() {
               tagColor="#185FA5"
               tagBg="#E6F1FB"
               open={false}
+              closed
               onClick={() => toggle('ai')}
             />
           </div>
@@ -500,9 +512,12 @@ export default function Careers() {
             style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', fontWeight: 700, fontSize: '0.9rem', color: '#185FA5', padding: 0, marginBottom: '1.5rem' }}>
             ← Back to all roles
           </button>
-          <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.6rem', fontWeight: 800, color: '#0A0A0A', margin: '0 0 0.9rem' }}>
-            AI Software Trainee
-          </h3>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap', margin: '0 0 0.9rem' }}>
+            <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.6rem', fontWeight: 800, color: '#0A0A0A', margin: 0 }}>
+              AI Software Trainee
+            </h3>
+            <ClosedBadge />
+          </div>
           <TagRow color="#185FA5" bg="#E6F1FB" items={['Kelambakkam, Chennai', '3-Month Trainee']} />
           <p style={{ fontSize: '0.98rem', lineHeight: 1.75, color: '#374151' }}>
             As an AI Software Trainee, you will work directly with our development team on real-world software, AI and automation projects — not just training exercises. You'll get exposure to Agentic AI, multi-agent systems, LLMs and AI APIs, AI-powered business automation, backend and frontend development, workflow automation, database-driven applications, cloud infrastructure, AI-enabled SaaS platforms and mobile/web applications.
