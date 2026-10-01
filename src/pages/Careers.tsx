@@ -268,7 +268,7 @@ const telecallingRequirements = [
   'Freshers are welcome to apply.',
   'Candidates returning to work after a career break are encouraged to apply.',
   'Good verbal communication skills.',
-  'Ability to communicate in Tamil, English, Hindi, or Telugu.',
+  'Ability to communicate in Tamil, English, Hindi, or Telugu (any Indian language).',
   'Good internet connection and a suitable work-from-home setup.',
   'Comfortable making regular phone calls and following up with leads.',
   'Positive attitude and willingness to learn.',
