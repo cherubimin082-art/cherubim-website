@@ -591,13 +591,9 @@ export default function Careers() {
           </p>
 
           <div style={{ background: '#111', borderRadius: '12px', padding: '1.5rem', marginTop: '2rem', textAlign: 'center' }}>
-            <p style={{ color: '#d1d5db', fontSize: '0.9rem', margin: '0 0 0.6rem', lineHeight: 1.6 }}>
-              Send your resume, GitHub profile, LinkedIn profile, and details of 1–2 projects you've built to:
+            <p style={{ color: '#d1d5db', fontSize: '0.9rem', margin: 0, lineHeight: 1.6 }}>
+              This position is currently <strong style={{ color: '#FCA5A5' }}>closed</strong> and not accepting applications.
             </p>
-            <a href="mailto:support@cherubim.in?subject=Application%20%E2%80%94%20AI%20Software%20Trainee"
-              style={{ color: '#185FA5', fontWeight: 700, fontSize: '0.95rem', textDecoration: 'underline' }}>
-              Email: support@cherubim.in
-            </a>
           </div>
           <button type="button" onClick={() => setOpenRole(null)}
             style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', fontWeight: 700, fontSize: '0.9rem', color: '#185FA5', padding: 0, marginTop: '1.5rem' }}>
